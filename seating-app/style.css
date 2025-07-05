@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#guestList {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-height: 50px;
+}
+
+.guest {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    display: inline-block;
+    cursor: move;
+}
+
+.table {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin: 20px;
+    display: inline-block;
+}
+
+.seat {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #eaeaea;
+    border: 1px solid #999;
+    border-radius: 4px;
+    cursor: pointer;
+}

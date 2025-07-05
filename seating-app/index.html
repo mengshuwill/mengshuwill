@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Seating Arrangement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Wedding Seating Arrangement</h1>
+
+    <div id="controls">
+        <label for="tableCount">Number of Tables: </label>
+        <input type="number" id="tableCount" min="1" value="1">
+        <button id="createTables">Create Tables</button>
+    </div>
+
+    <div id="guestInput">
+        <input type="text" id="guestName" placeholder="Guest name">
+        <button id="addGuest">Add Guest</button>
+    </div>
+
+    <div id="guestList"></div>
+
+    <div id="tables"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

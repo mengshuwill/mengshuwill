@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.zenresearch.medrisk'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.zenresearch.medrisk'
+        minSdk 24
+        targetSdk 35
+        versionCode 3
+        versionName '2.1'
+    }
+}

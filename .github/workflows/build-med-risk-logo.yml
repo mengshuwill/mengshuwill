@@ -1,0 +1,36 @@
+name: Build Med Risk Logo APK
+
+on:
+  push:
+    branches:
+      - tmp-med-risk-apk-logo-v21
+    paths:
+      - 'android-apk/**'
+      - '.github/workflows/build-med-risk-logo.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: tmp-med-risk-apk-logo-v21
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build APK
+        run: gradle -p android-apk assembleDebug --no-daemon
+      - name: Publish APK to branch
+        run: |
+          mkdir -p dist
+          cp android-apk/app/build/outputs/apk/debug/app-debug.apk dist/med-risk-v2.1-logo.apk
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add dist/med-risk-v2.1-logo.apk
+          git commit -m 'build: MedRisk v2.1 APK with logo' || exit 0
+          git push origin HEAD:tmp-med-risk-apk-logo-v21
